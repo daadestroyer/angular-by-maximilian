@@ -11,4 +11,5 @@ export class AppComponent {
   oddNumber = [1,3,5];
   evenNumber = [2,4,6];
   onlyOdd = true;
+  value=Math.round(Math.random()*6);
 }
