@@ -1,5 +1,23 @@
-<div class="container jumbotron mt-5">
-  <h1>Directive Deep Dive</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum praesentium, eveniet expedita soluta facilis repellendus corrupti dolor molestias minima natus!</p>
-  <div class="button btn btn-primary">Submit</div>
+<div class="container mt-5">
+  <h2>Section-7 Directive Deep Dive</h2>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="button btn btn-primary" (click)="onlyOdd = !onlyOdd">Only show odd number</div>
+      <br><br>
+      <ul class="list-group">
+
+        <div *ngIf="onlyOdd">
+        <li class="list-group-item" *ngFor="let odd of oddNumber" >
+          {{odd}}
+        </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li class="list-group-item" *ngFor="let even of evenNumber" >
+            {{even}}
+          </li>
+          </div>
+
+      </ul>
+    </div>
+  </div>
 </div>
