@@ -4,21 +4,23 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '
 @Component({
   selector: 'app-add-account',
   templateUrl: './add-account.component.html',
-  styleUrls: ['./add-account.component.css']
+  styleUrls: ['./add-account.component.css'],
+  providers : [LoggingServce]
 })
 export class AddAccountComponent implements OnInit {
 
    @Output() accountAdded = new EventEmitter<{name:string,status:string}>();
 
-  constructor() { }
+  constructor(private loggingServce : LoggingServce ) {}
 
   ngOnInit(): void {
   }
 
   onCreateAccount(accountName:string,accountStatus:string){
     this.accountAdded.emit({name:accountName,status:accountStatus});
-    const service = new LoggingServce();
-    service.logStatusChanged(accountStatus);
+    // const service = new LoggingServce();
+
+    this.loggingServce.logStatusChanged(accountStatus);
   }
 
 }
