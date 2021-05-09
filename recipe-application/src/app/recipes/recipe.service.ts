@@ -1,6 +1,9 @@
+import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 export class RecipeService {
+  recipeSelected = new EventEmitter<Recipe>();
+
   private recipe: Recipe[] = [
     new Recipe(
       'Honey Chilli Potato',
@@ -15,6 +18,7 @@ export class RecipeService {
   ];
 
   getRecipes() {
+    // here i returned empty array
     return this.recipe.slice();
   }
 }

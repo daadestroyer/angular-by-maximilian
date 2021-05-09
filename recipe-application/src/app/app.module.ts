@@ -1,4 +1,4 @@
-
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,18 +14,16 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 @NgModule({
   declarations: [
     AppComponent,
-   HeaderComponent,
-   RecipesComponent,
-   RecipesListComponent,
-   RecipesDetailsComponent,
-   RecipesItemComponent,
-   ShoppingListComponent,
-   ShoppingEditComponent
+    HeaderComponent,
+    RecipesComponent,
+    RecipesListComponent,
+    RecipesDetailsComponent,
+    RecipesItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule],
+  providers: [ShoppingListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
