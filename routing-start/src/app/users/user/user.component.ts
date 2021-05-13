@@ -22,6 +22,7 @@ export class UserComponent implements OnInit , OnDestroy {
       name:this.route.snapshot.params['name'] 
     };
 
+    // ye subscription ka use islie kia hai kyuki link pe click karne par current user ki value ko lane ke lie
     this.paramsSubscription =  this.route.params.subscribe(
       (params:Params) => {
         this.user.id = params['id'];
